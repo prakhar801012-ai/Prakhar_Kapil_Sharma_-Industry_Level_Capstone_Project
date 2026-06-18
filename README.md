@@ -1,135 +1,181 @@
-🚀 Advanced AutoML Stacking System (Industry-Level Capstone)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced AutoML Stacking System</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
+    }
 
-An end-to-end AutoML-style tabular machine learning pipeline implementing:
+    h1, h2, h3 {
+        color: #38bdf8;
+    }
 
-🧠 Multi-model stacking (XGBoost + LightGBM + Random Forest)
-⚖️ Out-of-fold (OOF) ensemble learning (no data leakage)
-🔍 Feature selection (mutual information based)
-📉 Drift detection (Kolmogorov–Smirnov test)
-🧪 SMOTE-based imbalance handling
-🎯 Bayesian-style threshold optimization
-📊 Cross-dataset benchmarking (real-world datasets)
+    .container {
+        max-width: 1000px;
+        margin: auto;
+    }
 
-This project simulates a production-grade AutoML system with modular components inspired by modern ML platforms.
+    .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
 
-📌 Key Features
-🧠 1. Ensemble Stacking Architecture
-Base Models:
-XGBoost Classifier
-LightGBM Classifier
-Random Forest Classifier
-Meta Model:
-Logistic Regression (stacking blender)
-Uses OOF predictions to avoid leakage
-⚖️ 2. Imbalanced Learning Support
-SMOTE oversampling applied dynamically
-Works automatically only when imbalance is detected
-🔍 3. Intelligent Feature Selection
-Mutual Information based feature ranking
-Adaptive selection (k = min(20, features))
-📉 4. Data Drift Detection
-Kolmogorov–Smirnov test per feature
-Flags statistically significant distribution shifts
-🎯 5. Threshold Optimization
-Optimizes classification threshold instead of default 0.5
-Uses numerical optimization to maximize accuracy
-📊 6. Real Dataset Benchmarking
+    code {
+        background: #334155;
+        padding: 3px 6px;
+        border-radius: 5px;
+        color: #facc15;
+    }
 
-Evaluated on multiple datasets:
+    pre {
+        background: #0b1220;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        color: #22c55e;
+    }
 
-Iris
-Breast Cancer
-Wine
-Credit-G (OpenML)
-🏗️ Architecture Overview
+    .badge {
+        display: inline-block;
+        background: #2563eb;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 5px;
+        font-size: 12px;
+    }
+
+    .highlight {
+        color: #f97316;
+        font-weight: bold;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>🚀 Advanced AutoML Stacking System</h1>
+    <p>
+        A production-inspired <span class="highlight">AutoML pipeline</span> implementing 
+        stacking ensembles, feature selection, drift detection, and threshold optimization.
+    </p>
+
+    <div class="card">
+        <h2>📌 Key Features</h2>
+        <span class="badge">Stacking Ensemble</span>
+        <span class="badge">XGBoost</span>
+        <span class="badge">LightGBM</span>
+        <span class="badge">Random Forest</span>
+        <span class="badge">SMOTE</span>
+        <span class="badge">Drift Detection</span>
+        <span class="badge">Auto Thresholding</span>
+
+        <ul>
+            <li>OOF (Out-of-Fold) stacking without data leakage</li>
+            <li>Mutual information-based feature selection</li>
+            <li>SMOTE handling for imbalanced datasets</li>
+            <li>Kolmogorov–Smirnov drift detection</li>
+            <li>Optimized classification threshold tuning</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🏗️ Architecture</h2>
+        <pre>
 Input Data
    ↓
 Feature Selection (Mutual Information)
    ↓
 Scaling (StandardScaler)
    ↓
-OOF Training (5-Fold CV)
+OOF Cross Validation (5-Fold)
    ↓
 Base Models:
-   ├── XGBoost
-   ├── LightGBM
-   └── Random Forest
+   - XGBoost
+   - LightGBM
+   - Random Forest
    ↓
-Stacked Meta Model (Logistic Regression)
+Meta Model (Logistic Regression)
    ↓
 Threshold Optimization
    ↓
-Final Predictions
-📦 Installation
+Final Prediction
+        </pre>
+    </div>
+
+    <div class="card">
+        <h2>📦 Installation</h2>
+        <pre>
 pip install scikit-learn xgboost lightgbm imbalanced-learn pandas numpy scipy
-🚀 How to Run
+        </pre>
+    </div>
+
+    <div class="card">
+        <h2>🚀 How to Run</h2>
+        <pre>
 python main.py
-
-Or in Google Colab:
-
-# Just paste the full script and run:
+        </pre>
+        <p>Or in Google Colab:</p>
+        <pre>
 run()
-📊 Sample Output
+        </pre>
+    </div>
+
+    <div class="card">
+        <h2>📊 Sample Output</h2>
+        <pre>
 🔥 Dataset 1 CV Accuracy: 0.9732
 🔥 Dataset 2 CV Accuracy: 0.9874
 🔥 Dataset 3 CV Accuracy: 0.9551
 🔥 Dataset 4 CV Accuracy: 0.7626
 
 🚀 FINAL SCORE: 0.9196
-🧠 Technical Highlights (What Makes This “Industry-Level”)
-✔️ No Data Leakage
-Uses Stratified K-Fold OOF stacking
-Meta-model trained only on validation predictions
-✔️ Production-Inspired Design
-Modular pipeline functions
-Dataset-agnostic architecture
-Handles missing datasets gracefully
-✔️ Hybrid Ensemble Strategy
-Combines:
-Tree boosting (XGBoost, LightGBM)
-Bagging (Random Forest)
-Linear blending (Logistic Regression)
-✔️ Robustness Techniques
-SMOTE balancing
-Feature selection
-Drift detection
-📁 Project Structure
-auto_ml_stacking/
-│
-├── main.py                  # Full pipeline
-├── README.md                # Project documentation
-└── requirements.txt        # Dependencies
-📈 Possible Upgrades (Next Level 🔥)
+        </pre>
+    </div>
 
-To push this to Google-level AutoML / Level 4 system:
+    <div class="card">
+        <h2>🧠 System Highlights</h2>
+        <ul>
+            <li>No data leakage (OOF stacking)</li>
+            <li>Adaptive feature selection</li>
+            <li>Multi-model ensemble learning</li>
+            <li>Robust imbalance handling</li>
+            <li>Production-style evaluation pipeline</li>
+        </ul>
+    </div>
 
-🚀 Model Enhancements
-Neural tabular models (FT-Transformer)
-Deep stacking (MLP meta-model)
-Bayesian stacking weights
-⚙️ AutoML Extensions
-Neural Architecture Search (NAS)
-Hyperparameter optimization (Optuna / Bayesian optimization)
-Auto feature engineering engine
-🧠 MLOps Layer
-Model registry (MLflow)
-Drift-triggered retraining pipeline
-Feature store integration
-API deployment (FastAPI)
-🧪 Scalability
-Distributed training (Dask / Spark)
-GPU acceleration for boosting models
-🏆 Project Summary
+    <div class="card">
+        <h2>🚀 Future Upgrades</h2>
+        <ul>
+            <li>Neural tabular models (FT-Transformer)</li>
+            <li>Optuna hyperparameter optimization</li>
+            <li>MLflow model tracking</li>
+            <li>FastAPI deployment</li>
+            <li>Distributed training (Spark / Dask)</li>
+        </ul>
+    </div>
 
-This project demonstrates a full-stack machine learning system design:
+    <div class="card">
+        <h2>🏆 Summary</h2>
+        <p>
+            This project demonstrates a full-scale <b>AutoML stacking system</b> combining
+            classical ML + ensemble learning + optimization techniques.
+        </p>
+    </div>
 
-From raw datasets → feature engineering → ensemble learning → meta-model → optimization → evaluation
-
-It is suitable for:
-
-🎓 Capstone projects
-💼 ML engineering portfolio
-🚀 AutoML system demonstrations
-📜 License
-
-MIT License
+</div>
+</body>
+</html>
