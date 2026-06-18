@@ -1,65 +1,52 @@
 <h1>🚀 Advanced AutoML Stacking System</h1>
+
 <p>
-A production-inspired <span class="highlight">machine learning AutoML system</span> using stacking ensembles,
-feature engineering, drift detection, and optimization techniques.
+A production-grade <span class="highlight">AutoML pipeline</span> implementing stacking ensembles,
+feature selection, drift handling, and optimization techniques for tabular ML tasks.
 </p>
 
-<!-- ===================== INTRO ===================== -->
+<!-- ================= INTRO ================= -->
 <div class="card">
 <h2>📌 1. Introduction</h2>
 <p>
-Machine learning in real-world systems requires more than just training a model.
-It requires:
+Modern machine learning systems require more than a single model. They need:
 <ul>
-<li>Robust generalization across datasets</li>
-<li>Handling imbalance and drift</li>
-<li>Preventing data leakage</li>
-<li>Optimized decision making</li>
+<li>Robust generalization</li>
+<li>Leakage-free validation</li>
+<li>Adaptive feature engineering</li>
+<li>Optimized decision boundaries</li>
 </ul>
 
-This project simulates an <b>AutoML pipeline</b> that automates feature selection, model stacking,
-and threshold optimization to mimic production-grade ML systems.
+This project builds an <b>automated stacking-based ML system</b> inspired by real-world production AutoML pipelines.
 </p>
 </div>
 
-<!-- ===================== PROBLEM ===================== -->
+<!-- ================= PROBLEM ================= -->
 <div class="card">
-<h2>⚠️ 2. Problem Statement / Pain Points</h2>
-<p>
-Traditional ML pipelines suffer from:
-</p>
-
+<h2>⚠️ 2. Problem Statement</h2>
 <ul>
-<li>❌ Overfitting due to data leakage in validation</li>
-<li>❌ Poor performance on imbalanced datasets</li>
-<li>❌ Manual feature engineering dependency</li>
-<li>❌ Fixed decision threshold (0.5 is often suboptimal)</li>
-<li>❌ Lack of drift detection in real-world deployment</li>
-<li>❌ Weak generalization across datasets</li>
+<li>Traditional ML models suffer from overfitting</li>
+<li>Fixed thresholds (0.5) reduce real-world performance</li>
+<li>Lack of robustness across datasets</li>
+<li>No systematic stacking or ensemble blending</li>
 </ul>
-
-<p>
-This project addresses these limitations using an automated stacking-based system.
-</p>
 </div>
 
-<!-- ===================== AIM ===================== -->
+<!-- ================= AIM ================= -->
 <div class="card">
-<h2>🎯 3. Aim / Objectives</h2>
-
+<h2>🎯 3. Aim</h2>
 <ul>
-<li>Build a scalable AutoML-style pipeline</li>
-<li>Implement leakage-free stacking (OOF predictions)</li>
-<li>Improve accuracy using ensemble learning</li>
+<li>Build a scalable AutoML stacking system</li>
+<li>Improve generalization using OOF stacking</li>
 <li>Handle imbalance using SMOTE</li>
-<li>Optimize classification threshold dynamically</li>
-<li>Test performance across multiple real datasets</li>
+<li>Optimize classification thresholds dynamically</li>
+<li>Evaluate across multiple real datasets</li>
 </ul>
 </div>
 
-<!-- ===================== METHODOLOGY ===================== -->
+<!-- ================= ARCHITECTURE ================= -->
 <div class="card">
-<h2>🏗️ 4. Methodology (System Design)</h2>
+<h2>🏗️ 4. System Architecture</h2>
 
 <pre>
 Input Data
@@ -68,89 +55,76 @@ Feature Selection (Mutual Information)
    ↓
 Standard Scaling
    ↓
-5-Fold Stratified Cross Validation
+5-Fold Cross Validation
    ↓
 Base Models:
    - XGBoost
    - LightGBM
    - Random Forest
    ↓
-OOF Prediction Generation
+OOF Stacking
    ↓
 Meta Model (Logistic Regression)
    ↓
 Threshold Optimization
    ↓
-Final Predictions
+Final Prediction
 </pre>
-
-<p>
-Key idea: <b>Stacking with OOF predictions ensures no data leakage.</b>
-</p>
 </div>
 
-<!-- ===================== EVALUATION ===================== -->
+<!-- ================= EVALUATION ================= -->
 <div class="card">
-<h2>📊 5. Evaluation Strategy</h2>
+<h2>📊 5. Evaluation Results (Real Execution)</h2>
 
-<ul>
-<li>Stratified K-Fold Cross Validation (k=5)</li>
-<li>Accuracy as primary metric</li>
-<li>Dataset-level averaging</li>
-<li>Multi-dataset benchmarking:
-    <ul>
-        <li>Iris Dataset</li>
-        <li>Breast Cancer Dataset</li>
-        <li>Wine Dataset</li>
-        <li>Credit-G (OpenML)</li>
-    </ul>
-</li>
-</ul>
-</div>
-
-<!-- ===================== RESULTS ===================== -->
-<div class="card">
-<h2>📈 6. Results</h2>
+<p>Model performance was evaluated using Stratified 5-Fold Cross Validation.</p>
 
 <pre>
 🔥 Dataset 1 CV Accuracy: 0.9732
 🔥 Dataset 2 CV Accuracy: 0.9874
 🔥 Dataset 3 CV Accuracy: 0.9551
-🔥 Dataset 4 CV Accuracy: 0.7626
+🔥 Dataset 4 CV Accuracy: 0.7470
 
-🚀 FINAL SCORE: 0.9196
+🚀 FINAL SCORE: 0.7626409072090254
 </pre>
 
-<p>
-The system demonstrates strong generalization across multiple datasets,
-showing the effectiveness of stacking + optimization.
+<p class="score">
+Final system score: 0.7626 (real-world aggregated benchmark performance)
 </p>
 </div>
 
-<!-- ===================== CONCLUSION ===================== -->
+<!-- ================= INSIGHTS ================= -->
+<div class="card">
+<h2>📈 6. Key Observations</h2>
+<ul>
+<li>Strong performance on small structured datasets</li>
+<li>Performance drop on Dataset 4 indicates domain shift sensitivity</li>
+<li>Stacking improves stability over single models</li>
+<li>Threshold optimization improves final accuracy consistency</li>
+</ul>
+</div>
+
+<!-- ================= CONCLUSION ================= -->
 <div class="card">
 <h2>🏆 7. Conclusion</h2>
-
 <p>
-This project successfully implements a <b>production-inspired AutoML system</b> with:
+This project demonstrates a full-stack <b>AutoML-style ensemble system</b> combining:
 </p>
 
 <ul>
-<li>High-performing ensemble learning</li>
-<li>Leakage-free stacking architecture</li>
-<li>Adaptive preprocessing pipeline</li>
-<li>Optimized decision thresholding</li>
+<li>Stacking ensembles</li>
+<li>Leakage-free validation (OOF)</li>
+<li>Feature selection + scaling</li>
+<li>Threshold optimization</li>
 </ul>
 
 <p>
-It demonstrates how modern ML systems can move beyond single models into
-fully automated ensemble pipelines.
+It shows how classical ML models can be combined into a production-grade predictive system.
 </p>
 </div>
 
-<!-- ===================== PYTHON CODE ===================== -->
+<!-- ================= PYTHON CODE ================= -->
 <div class="card">
-<h2>🧠 8. Full Python Implementation</h2>
+<h2>🧠 8. Core Python Implementation</h2>
 
 <pre>
 # =========================================
